@@ -1,0 +1,463 @@
+body {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
+.wrapper {
+    width: 984px;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 40px;
+    padding-right: 10px;
+    padding-left: 11px;
+    background-color: #4f5462;
+}
+
+.window-controllers {
+    display: flex;
+    justify-content: space-between;
+    width: 49px;
+    padding-top: 2px;
+}
+
+.window-controllers button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.window-controllers button:last-of-type {
+    margin-right: 0;
+}
+
+.close-window-button {
+    background-color: #f75e51;
+}
+
+.minimize-window-button {
+    background-color: #fbbe00;
+}
+
+.full-screen-window-button {
+    background-color: #42ca35;
+}
+
+.load-photo {
+    height: 23px;
+    margin-left: 16px;
+    padding-right: 9px;
+    padding-left: 9px;
+    border-radius: 2px;
+    color: #000;
+    font-size: 12px;
+    line-height: 23px;
+    background-color: #9adb4d;
+}
+
+.scale-switchers,
+.view-switchers {
+    display: flex;
+    justify-content: space-between;
+}
+
+.scale-switchers {
+    margin-left: 56px;
+}
+
+.view-switchers {
+    margin-left: 357px;
+}
+
+.scale-switchers input[type="radio"],
+.view-switchers input[type="radio"] {
+    display: none;
+}
+
+.scale-switchers label,
+.view-switchers label {
+    padding: 4px;
+    transition: all .4s;
+    color: #787c86;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.scale-switchers label:first-of-type {
+    margin-right: 6px;
+}
+
+.view-switchers label:first-of-type {
+    margin-right: 2px;
+}
+
+.scale-fit:checked + label,
+.scale-no-scale:checked + label {
+    color: #9adb4d;
+}
+
+.view-switchers label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-switchers label svg {
+    height: 24px;
+}
+
+.view-switchers label:nth-of-type(2) svg {
+    height: 19px;
+}
+
+.view-switchers label path {
+    transition: all .4s;
+    fill: #787c86;
+}
+
+.view-switchers .compare-view-icon {
+    height: 16px;
+}
+
+.view-switchers .compare-view-icon path,
+.view-switchers label line {
+    transition: all .4s;
+    stroke: #787c86;
+    stroke-width: 14px;
+}
+
+.view-switchers .compare-view-icon path {
+    fill: transparent;
+}
+
+.view-switchers input[type="radio"]:checked + label path,
+.view-switchers input[type="radio"]:checked + label line {
+    fill: #9adb4d;
+    stroke: #9adb4d;
+}
+
+.view-switchers input[type="radio"]:checked + label .compare-view-icon path {
+    fill: transparent;
+    stroke: #9adb4d;
+}
+
+.cut-button svg path,
+.upload-button svg path {
+    transition: all .3s;
+}
+
+.cut-button svg {
+    height: 15px;
+    margin-left: 50px;
+}
+
+.upload-button {
+    margin-right: 10px;
+    margin-left: auto;
+}
+
+.upload-button svg {
+    height: 18px;
+}
+
+.cut-button path,
+.upload-button path {
+    fill: #787c86;
+}
+
+.cut-button:hover path,
+.upload-button:hover path {
+    fill: #9adb4d;
+}
+
+.export-button {
+    padding-right: 8px;
+    padding-left: 8px;
+    border-radius: 3px;
+    background-color: #5f6472;
+    transition: all .3s;
+    color: #787c86;
+    font-size: 11px;
+    line-height: 22px;
+}
+
+.facebook-link {
+    margin-right: 12px;
+    transition: all .3s;
+    border-radius: 3px;
+}
+
+.facebook-link,
+.facebook-link svg {
+    height: 22px;
+}
+
+.facebook-link path {
+    fill: #4f6086;
+}
+
+.facebook-link rect {
+    fill: #fff;
+}
+
+.export-button:hover,
+.facebook-link:hover {
+    color: #fff;
+    box-shadow: 0 0 4px #fff;
+}
+
+/*image-preview*/
+
+.image-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 466px;
+    background-color: #30313a;
+}
+
+.image-frame {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 845px;
+    height: 436px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    position: relative;
+    background-image: url('../img/ferrari.jpg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 845px 435px;
+}
+
+.adjusted-image {
+    width: 400px;
+    height: 436px;
+    background-image: url('../img/ferrari.jpg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 845px 435px;
+    filter: grayscale(100%);
+}
+
+.moving-indicator {
+    position: relative;
+    width: 1px;
+    height: 452px;
+    min-height: 452px;
+    background-color: #80bc33;
+    user-select: none;
+}
+
+.moving-indicator::before,
+.moving-indicator::after {
+    position: absolute;
+    top: 16px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #878b94;
+}
+
+.moving-indicator::before {
+    right: 12px;
+    content: "before";
+}
+
+.moving-indicator::after {
+    left: 12px;
+    content: "after";
+}
+
+/*image-adjustment*/
+
+.image-adjustment {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #434651;
+    color: #96989d;
+}
+
+.image-adjustment .select-filter-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #30313a;
+    height: 40px;
+    width: 48px;
+}
+
+.select-filter-button svg {
+    height: 17px;
+    background-color: #434651;
+}
+
+.select-filter-button path {
+    transition: all .3s;
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 4px;
+}
+
+.select-filter-button:hover path {
+    fill: #80bc33;
+    stroke: #80bc33;
+}
+
+.image-adjustment ul {
+    position: absolute;
+    top: 42px;
+    height: 0;
+    overflow-y: auto;
+    z-index: 10;
+    transition: all .5s;
+}
+
+.image-adjustment ul.opened {
+    height: 135px;
+}
+
+.image-adjustment li {
+    padding: 8px 15px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid transparent;
+    background-color: #434651;
+}
+
+.image-adjustment li:hover {
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+.adjustment-range-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 290px;
+}
+
+.adjustment-range-block label {
+    display: block;
+    font-size: 14px;
+}
+
+.adjustment-range-block label:first-of-type {
+    margin-right: 4px;
+}
+
+.adjustment-range-block label:last-of-type {
+    margin-left: 12px;
+}
+
+.adjustment-range-block input[type=range] {
+    -webkit-appearance: none;
+    width: 190px;
+}
+
+.adjustment-range-block input[type=range]::-webkit-slider-runnable-track {
+    height: 6px;
+    background: #000;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.adjustment-range-block input[type=range]::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    margin-top: -5px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    background: #9adc4d;
+    box-shadow: 1px 1px 1px #000;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.adjustment-range-block input[type=range]::-moz-range-track {
+    height: 6px;
+    border-radius: 3px;
+    background: #000;
+    cursor: pointer;
+}
+
+.adjustment-range-block input[type=range]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    margin-top: -14px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    background: #9adc4d;
+    box-shadow: 1px 1px 1px #000;
+    cursor: pointer;
+}
+
+.image-adjustment .apply-to-all-button {
+    margin-left: 33px;
+    padding-right: 11px;
+    padding-left: 11px;
+    border-radius: 1px;
+    transition: all .5s;
+    background-color: #545865;
+    line-height: 24px;
+    color: #96989d;
+    font-size: 11px;
+}
+
+.image-adjustment .apply-to-all-button:hover {
+    color: #fff;
+    box-shadow: 0 0 4px #fff;
+}
+
+/*images-list*/
+
+.images-list {
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    overflow-x: scroll;
+    background-color: #30323a;
+}
+
+.images-list img {
+    position: relative;
+    width: 146px;
+    min-width: 146px;
+    height: 100px;
+    min-height: 100px;
+    border: 1px solid transparent;
+    background-color: #1b1c21;
+}
+
+.images-list div {
+    position: relative;
+    margin-right: 13px;
+}
+
+.images-list div::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: -1px;
+    left: -1px;
+    width: 144px;
+    height: 98px;
+    z-index: 10;
+    border: 2px solid transparent;
+}
+
+.images-list .current-image::before  {
+    -moz-border-image: -moz-linear-gradient(top left, #28fb67 0%, #1dce88 100%);
+    -webkit-border-image: -webkit-linear-gradient(top left, #28fb67 0%, #1dce88 100%);
+    border-image: linear-gradient(to bottom right, #28fb67 0%, #1dce88 100%);
+    border-image-slice: 1;
+}
+
+.images-list div:last-of-type {
+    margin-right: 0;
+}
